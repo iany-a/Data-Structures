@@ -1,0 +1,37 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\ASE\\Repos\\Data-Structures\\S01\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{E2F9FB8A-41B2-4DB5-A356-6A6C33BE4A5C}|S01.vcxproj|D:\\ASE\\Repos\\Data-Structures\\S01\\Source.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{E2F9FB8A-41B2-4DB5-A356-6A6C33BE4A5C}|S01.vcxproj|solutionrelative:Source.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Source.c",
+              "DocumentMoniker": "D:\\ASE\\Repos\\Data-Structures\\S01\\Source.c",
+              "RelativeDocumentMoniker": "Source.c",
+              "ToolTip": "D:\\ASE\\Repos\\Data-Structures\\S01\\Source.c",
+              "RelativeToolTip": "Source.c",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAAAQAAAAjAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000423|",
+              "WhenOpened": "2026-02-19T07:16:36.208Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
