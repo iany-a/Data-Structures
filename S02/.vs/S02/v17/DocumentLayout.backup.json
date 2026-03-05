@@ -5,6 +5,10 @@
     {
       "AbsoluteMoniker": "D:0:0:{5C39D77E-6925-4C92-9624-A6E7DB574A5C}|S02.vcxproj|D:\\ASE\\Repos\\Data-Structures\\S02\\src\\Source.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{5C39D77E-6925-4C92-9624-A6E7DB574A5C}|S02.vcxproj|solutionrelative:src\\Source.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5C39D77E-6925-4C92-9624-A6E7DB574A5C}|S02.vcxproj|D:\\ASE\\Repos\\Data-Structures\\S02\\src\\Student.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{5C39D77E-6925-4C92-9624-A6E7DB574A5C}|S02.vcxproj|solutionrelative:src\\Student.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     }
   ],
   "DocumentGroupContainers": [
@@ -14,8 +18,21 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 1,
           "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Student.c",
+              "DocumentMoniker": "D:\\ASE\\Repos\\Data-Structures\\S02\\src\\Student.c",
+              "RelativeDocumentMoniker": "src\\Student.c",
+              "ToolTip": "D:\\ASE\\Repos\\Data-Structures\\S02\\src\\Student.c",
+              "RelativeToolTip": "src\\Student.c",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000423|",
+              "WhenOpened": "2026-03-05T07:34:53.794Z",
+              "EditorCaption": ""
+            },
             {
               "$type": "Document",
               "DocumentIndex": 0,
@@ -24,7 +41,7 @@
               "RelativeDocumentMoniker": "src\\Source.c",
               "ToolTip": "D:\\ASE\\Repos\\Data-Structures\\S02\\src\\Source.c",
               "RelativeToolTip": "src\\Source.c",
-              "ViewState": "AgIAAFcAAAAAAAAAAAAAADQAAAAUAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAAQAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000423|",
               "WhenOpened": "2026-02-26T07:25:18.143Z",
               "EditorCaption": ""
