@@ -132,6 +132,9 @@
   <ItemGroup>
     <ClInclude Include="src\Student.h" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="S03_activity.md" />
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>
