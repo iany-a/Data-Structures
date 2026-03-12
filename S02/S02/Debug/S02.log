@@ -1,3 +1,9 @@
 ﻿  Source.c
+  Student.c
+  Generating Code...
 D:\ASE\Repos\Data-Structures\S02\src\Source.c(27,10): warning C4101: 'array': unreferenced local variable
+D:\ASE\Repos\Data-Structures\S02\src\Student.c(7,29): warning C4013: 'malloc' undefined; assuming extern returning int
+D:\ASE\Repos\Data-Structures\S02\src\Student.c(11,31): warning C4013: 'strlen' undefined; assuming extern returning int
+D:\ASE\Repos\Data-Structures\S02\src\Student.c(13,4): warning C4013: 'strcpy_s' undefined; assuming extern returning int
+D:\ASE\Repos\Data-Structures\S02\src\Student.c(16,4): warning C4013: 'free' undefined; assuming extern returning int
   S02.vcxproj -> D:\ASE\Repos\Data-Structures\S02\Debug\S02.exe
