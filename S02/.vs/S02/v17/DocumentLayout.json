@@ -38,8 +38,7 @@
               "RelativeToolTip": "S03_activity.md",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001818|",
-              "WhenOpened": "2026-03-05T07:42:20.65Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-03-05T07:42:20.65Z"
             },
             {
               "$type": "Document",
@@ -51,8 +50,7 @@
               "RelativeToolTip": "src\\Student.h",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAUAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2026-03-05T07:36:47.104Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-03-05T07:36:47.104Z"
             },
             {
               "$type": "Document",
@@ -64,8 +62,7 @@
               "RelativeToolTip": "src\\Student.c",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAVAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000423|",
-              "WhenOpened": "2026-03-05T07:34:53.794Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-03-05T07:34:53.794Z"
             },
             {
               "$type": "Document",
@@ -75,7 +72,7 @@
               "RelativeDocumentMoniker": "src\\Source.c",
               "ToolTip": "D:\\ASE\\Repos\\Data-Structures\\S02\\src\\Source.c",
               "RelativeToolTip": "src\\Source.c",
-              "ViewState": "AgIAAAYAAAAAAAAAAAAAABsAAAAhAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAAdAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000423|",
               "WhenOpened": "2026-02-26T07:25:18.143Z",
               "EditorCaption": ""
