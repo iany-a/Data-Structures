@@ -53,3 +53,8 @@ dkms.conf
 
 # debug information files
 *.dwo
+
+/S02/.vs
+/s02/.vs/s02/
+/S02/.vs
+S02/.vs/S02/v17/Browse.VC.db
