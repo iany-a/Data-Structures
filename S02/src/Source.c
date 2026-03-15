@@ -15,7 +15,8 @@ Student** insertIntoArray(int* size, Student** parray, Student stud) {
 		for (register int i = 0; i < *size - 1; i++) {
 			parray[i] = tmp[i]; //this copies the initial data into the new location
 		}
-		free(tmp);
+		free(tmp); 
+
 	}
 	parray[(*size) - 1] = &stud;
 	return parray;
