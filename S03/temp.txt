@@ -1,3 +1,0 @@
-unsigned int, unsigned int, char*
-4 + 2 + 4 = 10 bytes in total
-#pragma pack(1) is required for organizing the data

@@ -21,8 +21,8 @@
   <PropertyGroup Label="Globals">
     <VCProjectVersion>17.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
-    <ProjectGuid>{5c39d77e-6925-4c92-9624-a6e7db574a5c}</ProjectGuid>
-    <RootNamespace>S02</RootNamespace>
+    <ProjectGuid>{99cb780a-80ee-4b5e-a29a-77625cd9cad6}</ProjectGuid>
+    <RootNamespace>S03Fixed</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -123,17 +123,14 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="src\Source.c" />
-    <ClCompile Include="src\Student.c" />
+    <ClCompile Include="Source.c" />
+    <ClCompile Include="Student.c" />
   </ItemGroup>
   <ItemGroup>
-    <Text Include="resources\data.txt" />
+    <ClInclude Include="Student.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="src\Student.h" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="S03_activity.md" />
+    <Text Include="data.txt" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

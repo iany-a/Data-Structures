@@ -15,7 +15,7 @@ Student** insertIntoArray(int* size, Student** parray, Student stud) {
 		for (register int i = 0; i < *size - 1; i++) {
 			parray[i] = tmp[i]; //this copies the initial data into the new location
 		}
-		free(tmp); 
+		free(tmp);
 
 	}
 	parray[(*size) - 1] = &stud;
@@ -25,7 +25,7 @@ Student** insertIntoArray(int* size, Student** parray, Student stud) {
 int main() {
 
 	FILE* fp = fopen("data.txt", "r");
-	Student array[6]; 
+	Student array[6];
 	//Student* pArray[6]; //static array of 6 pointers
 
 	//Student* array; //ptr  to a Student or an array of elements of type Student
@@ -34,7 +34,7 @@ int main() {
 
 	if (fp != NULL) {
 		char line[LINE_BUFFER];
-		
+
 		char* delimiter = ","; //delimiter definition 1
 		//char token[] = {',' , '\0'}; //definition 2, equal to definition 1
 		unsigned int regNo;
@@ -50,15 +50,15 @@ int main() {
 			groupNo = atoi(token);
 			token = strtok_s(NULL, delimiter, &context);
 			Student* stud = createStudent(regNo, groupNo, token);
-			
+
 			parray = insertIntoArray(&size, parray, *stud);
 			//parray = instertIntoArray(&size, parray, stud);
 
 			printStudent(stud);
 			deleteStudent(stud);
 		}
-		
-		
+
+
 		//token[0] = '4';
 
 	}
