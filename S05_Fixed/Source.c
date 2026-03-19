@@ -42,7 +42,7 @@ bool isEmpty(StackNode* head) { //sp
 
 //insertion at the beginning of the list
 StackNode* push(StackNode* head, Student* stud) {
-	StackNode* newNode = (StackNode*)malloc(sizeof(StackNode*));
+	StackNode* newNode = (StackNode*)malloc(sizeof(StackNode)); //NEVER THE SIZE OF A POINTER
 	newNode->data = stud;
 	newNode->next = NULL;
 
@@ -53,15 +53,32 @@ StackNode* push(StackNode* head, Student* stud) {
 }
 
 Student* pop(StackNode** head) {
-	if (isEmpty(*head)) return NULL; //IMPORTANT: dereference the head before interogation, otherwise this is always FALSE
+	if (isEmpty(*head)) return NULL; //IMPORTANT: dereference the **head before interogation, 
+									 //otherwise this is always FALSE (ptr to ptr to head is always on stack)
+
+	//MAP: head contains head->data + head->next 
+
 	//1.return useful information
-	//2.delete the node
+	Student* stud = NULL;
+	stud = (*head)->data; //paranthesis are required to confirm order of operations
+	//pointer to stud takes the value of pointer to head->data,
+	//meaning that stud will now be assigned the address of the entry point of head (the data),
+	//not to be confused with the whole *head which contains both data and next
+	
+	//2.delete the node	
+	StackNode* tmp = *head;
+	//pointer to tmp takes the value of pointer to current head of stack (including both data and next)
+	//this creates a temporary pointer to a stackNode named tmp which takes the address 
+	//of the pointer of the top of the stack
+	
 	//3.change the head
-	Student* stud = (*head)->data; //paranthesis are required to confirm order of operations
-	StackNode** tmp = head;
 	(*head) = (*head)->next;
-	free(tmp);
-	return stud;
+	//pointer to head takes the value of pointer to head->next;
+	//implies that the list entry point has been moved from top of stack to the element below it
+	//eliminating the top element in this process
+
+	free(tmp); //free the now unused address of the previous top element in the stack
+	return stud; //returns the stud info which was removed from the stack
 }
 
 Student* peek(StackNode* head) {
@@ -106,8 +123,9 @@ int main()
 			stack = push(stack, stud);
 			stud = peek(stack);
 			printStudent(stud);
-		}
 
+		}
+		
 		deleteStack(&stack);
 	}
 }
@@ -161,7 +179,7 @@ Student* createStudent(unsigned int regNo,
 
 void deleteStack(StackNode** stack) {
 
-	while (!(isEmpty(*stack))) {
+	while (isEmpty(*stack)==false) {
 		Student* stud = pop(stack);
 		printStudent(stud);
 		deleteStudent(stud);
