@@ -4,6 +4,14 @@ LIFO - last in, first out; if the stack is full up to a point, the stack SP is a
 
 PUSH > Stack > POP
 
+|       | <-SP
+|       |
+|       |
+|       |
+_________ <-BP
+
+
+
 BP is always at the base of the stack
 
 n elements
@@ -20,6 +28,17 @@ Today we will implement stacks with lists
 PUSH/POP at the head of the stack (SP level)
 
 (SP) __ -> __ -> __ -> _N (BP)
+
+Printing the stack concept
+1 stack of books
+to get the bottom book, take one by one all the books from last one, create another temp stack, then put them back
+That's why we need two stacks aka double stack -> double linked list
+
+-PUSH
+-POP
+-isEmpty
+-PEEK
+
 
 
 
