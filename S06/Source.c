@@ -21,6 +21,8 @@
 // The Queue itself contains just a pointer of the first QueueNode in the list, and the last one.
 // The Queue does not care about how long the list is.
 // When a new student joins the queue (at the back), it is appended to the list via the Queue put function.
+// We use Student* get(Queue*) for safely removing the first Queue Node in the Queue.
+// This implies reasigning the head address and the head->next pointers accordingly, before deleting the node.
 
 
 typedef struct Student {
