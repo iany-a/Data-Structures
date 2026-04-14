@@ -1,0 +1,9 @@
+size trimis prin referinta ca &size (adica adresa acelui int)
+in functie, size care e o adresa este dereferntiat cu *size => returneaza valoarea in loc de adresa
+valoarea ++ (adica 1)
+
+
+Pass by Value: You photocopy the paper and mail the copy to me. I can erase the 5 on my copy and write 10, but your paper at home still says 5.
+
+    Pass by Address ("By Reference"): You mail me the GPS coordinates of your house. I drive to your house, walk inside, erase the 5 on your original paper, and write 6.
+

@@ -14,7 +14,7 @@ Student* createStudent(unsigned int regNo, short int groupNo, const char* name) 
 		}
 		else {
 			free(pStud); //LOGIC: if the student name does not exist, do not create the student
-			return NULL;
+			pStud = NULL; //avoid dangling pointer
 		}
 	}
 	return pStud;

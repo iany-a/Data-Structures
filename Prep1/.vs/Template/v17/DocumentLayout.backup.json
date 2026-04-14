@@ -1,0 +1,54 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\ASE\\Repos\\Data-Structures\\Prep1\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{22A6046E-BBBE-412D-B1A9-110051BC55A8}|Template.vcxproj|D:\\ASE\\Repos\\Data-Structures\\Prep1\\Source.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{22A6046E-BBBE-412D-B1A9-110051BC55A8}|Template.vcxproj|solutionrelative:Source.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{22A6046E-BBBE-412D-B1A9-110051BC55A8}|Template.vcxproj|D:\\ASE\\Repos\\Data-Structures\\Prep1\\Data.txt||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{22A6046E-BBBE-412D-B1A9-110051BC55A8}|Template.vcxproj|solutionrelative:Data.txt||{8B382828-6202-11D1-8870-0000F87579D2}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Data.txt",
+              "DocumentMoniker": "D:\\ASE\\Repos\\Data-Structures\\Prep1\\Data.txt",
+              "RelativeDocumentMoniker": "Data.txt",
+              "ToolTip": "D:\\ASE\\Repos\\Data-Structures\\Prep1\\Data.txt",
+              "RelativeToolTip": "Data.txt",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAbAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003109|",
+              "WhenOpened": "2026-04-13T22:11:59.763Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Source.c",
+              "DocumentMoniker": "D:\\ASE\\Repos\\Data-Structures\\Prep1\\Source.c",
+              "RelativeDocumentMoniker": "Source.c",
+              "ToolTip": "D:\\ASE\\Repos\\Data-Structures\\Prep1\\Source.c",
+              "RelativeToolTip": "Source.c",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAdAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000423|",
+              "WhenOpened": "2026-04-13T20:43:13.529Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -7,20 +7,37 @@
 #define LINE_BUFFER 256 //buffer for reading lines from the file with max length of 256
 
 // Student ** * is passed with an additional * as the array is being modified in real time
-Student** insertIntoArray(int* size, Student** parray, Student stud) {
-	Student** tmp = parray;
-	++(*size);
-	parray = (Student**)malloc((sizeof(Student**)) * (*size));
-	if ((*size - 1) > 0) {
-		for (register int i = 0; i < *size - 1; i++) {
-			parray[i] = tmp[i]; //this copies the initial data into the new location
-		}
-		free(tmp);
+//Student** insertIntoArray(int* size, Student** parray, Student stud) {
+//	Student** tmp = parray; //tmp takes address of parray
+//	++(*size); //size increase
+//	parray = (Student**)malloc((sizeof(Student*)) * (*size)); //realloc parray wrt new size (what happens with old data?)
+//	if ((*size - 1) > 0) {
+//		for (register int i = 0; i < *size - 1; i++) {
+//			parray[i] = tmp[i]; //this copies the initial data into the new location
+//		}
+//		free(tmp);
+//
+//	}
+//	parray[(*size) - 1] = &stud;
+//	return parray;
+//}
 
+Student** insertIntoArray(int* size, Student** pArray, Student* pStud) {
+	(*size)++; //0 to 1 and so on, each time the method is called
+	Student** tmp = (Student**)realloc(pArray, sizeof(Student*) * (*size)); //new array first with upsize
+	//NB: Student** tmp = realloc(NULL, size); is the same as malloc(size);.
+	if (tmp) { //this checks if tmp was allocated correctly
+		pArray = tmp; //assign address of newly created array to the passed array
+		pArray[*size - 1] = pStud; //add the current student (counting starts from index 0 always)
 	}
-	parray[(*size) - 1] = &stud;
-	return parray;
+	else { //if tmp was not allocated correctly, size goes back to initial value
+		(*size)--;
+	}
+
+	return pArray;
 }
+
+
 
 int main() {
 
@@ -29,7 +46,7 @@ int main() {
 	//Student* pArray[6]; //static array of 6 pointers
 
 	//Student* array; //ptr  to a Student or an array of elements of type Student
-	Student** parray = NULL; //ptr to a pointer to a Student (?)
+	Student** pArray = NULL; //ptr to an array of Student structs
 	int size = 0;
 
 	if (fp != NULL) {
@@ -51,14 +68,14 @@ int main() {
 			token = strtok_s(NULL, delimiter, &context);
 			Student* stud = createStudent(regNo, groupNo, token);
 
-			parray = insertIntoArray(&size, parray, *stud);
-			//parray = instertIntoArray(&size, parray, stud);
+			pArray = insertIntoArray(&size, pArray, stud);
+			//pArray = instertIntoArray(&size, parray, stud);
 
 			printStudent(stud);
 			deleteStudent(stud);
 		}
 
-
+		
 		//token[0] = '4';
 
 	}
