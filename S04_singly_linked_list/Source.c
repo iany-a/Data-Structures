@@ -14,7 +14,7 @@ typedef struct Student {
 //Singly-linked list definition
 typedef struct ListNode {
 	Student* data;
-	struct ListNode* next;
+	struct ListNode* next; //self-referential, always a pointer to the next node
 } ListNode, *PListNode;
 
 void deleteStudent(Student* pStud)
@@ -95,12 +95,12 @@ void insertStudentToEndList(ListNode** list, Student* stud) {
 }
 
 void printSinglyLinkedList(ListNode* list) {
-	if (list) {
+	//if (list) {
 		while (list) {
 			printStudent(list->data);
 			list = list->next;
 		}
-	}
+	//}
 }
 
 void insertStudentToArrayBasedList(ListNode** vector, Student* stud, short *headIndex, short size) {
