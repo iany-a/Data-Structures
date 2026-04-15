@@ -163,6 +163,7 @@ int main()
 			//insertStudentToEndList(&singlyLinkedList, stud);
 			insertStudentToArrayBasedList(vector, stud, &headIndex, size++);
 			
+			
 			printSinglyLinkedList(vector[headIndex]);
 			printf("\n------------------------------------------------\n");
 			//printStudent(stud);

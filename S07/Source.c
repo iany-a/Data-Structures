@@ -121,7 +121,7 @@ Student* createStudent(unsigned int regNo,
 
 
 //this function returns always data in the array [0; size-1]
-int fhash(int key, int size) {
+static int fhash(int key, int size) {
 	return key % size;
 }
 
@@ -130,24 +130,27 @@ DoubleLinkedList* insertCircleDoubleLinkedList(DoubleLinkedList* dll, Student* s
 	
 	//alloc memory for 1 node
 	DoubleLinkedList* node = (DoubleLinkedList*)malloc(sizeof(DoubleLinkedList));
-	node->info = stud;
-	node->next = NULL;
-	node->prev = NULL;
+	if (node) {
+		node->info = stud;
+		node->next = NULL;
+		node->prev = NULL;
 
-	if (!dll) {
-		dll = node;
-		dll->next = dll;
-		//dll->info already has the info from node
-		dll->prev = dll;
+		if (!dll) {
+			dll = node;
+			dll->next = dll;
+			//dll->info already has the info from node
+			dll->prev = dll;
+		}
+		else {
+			//node = dll;
+			node->next = dll;
+			node->prev = dll->prev;
+			dll->prev = node;
+			//dll->next = (node->prev)->next;
+			node->prev->next = node;
+		}
 	}
-	else {
-		//node = dll;
-		node->next = dll;
-		node->prev = dll->prev;
-		dll->prev = node;
-		//dll->next = (node->prev)->next;
-		node->prev->next = node;
-	}
+
 	return dll;
 }
 
@@ -172,7 +175,7 @@ void putStudent(HashTable* hashTable, Student* stud) {
 	if (hashTable->size == 0 || (!hashTable->items)) {
 		hashTable->size = HT_INITIAL_SIZE;
 		hashTable->items = (DoubleLinkedList**)malloc(HT_INITIAL_SIZE * sizeof(DoubleLinkedList*));
-		memset(hashTable->items, 0, HT_INITIAL_SIZE * sizeof(DoubleLinkedList*));
+		memset(hashTable->items, NULL, HT_INITIAL_SIZE * sizeof(DoubleLinkedList*));
 	}
 	//choose data from Data.txt, in this case group number
 	int index = fhash(stud->groupNo, hashTable->size);

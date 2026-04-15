@@ -81,9 +81,15 @@ int main()
 			Student* stud = createStudent(regNo, groupNo, token);
 
 			queue = put(queue, stud);
-			printStudent(queue.tail->info);
+			printf("Printing head:\n");
 			printStudent(queue.head->info);
+			printf("Printing tail:\n");
+			printStudent(queue.tail->info);
+			
 			//stud = get(&queue);
+			/*printStudent(queue.tail->info);
+			printStudent(queue.head->info);*/
+
 			//printStudent(stud);
 
 
@@ -93,13 +99,13 @@ int main()
 	}
 }
 
-QueueNode* createNode(Student* stud)
+static QueueNode* createNode(Student* stud)
 {	
 	QueueNode* newNode = (QueueNode*)malloc(sizeof(QueueNode));
-	
-	newNode->info = stud;
-	newNode->next = NULL;
-
+	if (newNode) {
+		newNode->info = stud;
+		newNode->next = NULL;
+	}
 	return newNode;
 }
 // why do we pass it by value
@@ -132,6 +138,7 @@ void deleteQueue(Queue* queue) {
 	Student* stud = NULL;
 	while ((stud = get(queue)) != NULL)
 	{
+		printf("Deleting student: ");
 		printStudent(stud);
 		deleteStudent(stud);
 	}
@@ -148,11 +155,12 @@ void deleteStudent(Student* pStud)
 }
 void printStudent(Student* pStud)
 {
-	if (pStud != NULL)
+	if (pStud)
 		printf("RegNo=%d, GroupNo=%d, Name=%s\n",
 			pStud->regNo,
 			pStud->groupNo,
 			pStud->name);
+	else printf("Nothing to print.");
 }
 
 Student* createStudent(unsigned int regNo,
