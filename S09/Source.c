@@ -4,7 +4,7 @@
 #include <stdlib.h>
 #pragma pack(1)
 #define LINE_BUFFER 256
-#define PQ_INITIAL_SIZE 3
+#define PQ_INITIAL_SIZE 6
 
 typedef struct Student {
 	unsigned int regNo;
@@ -97,7 +97,12 @@ Student* dequeue(PriorityQueue* pq) {
 	return studentResult;
 }
 
-
+void printQueue(PriorityQueue pq) {
+	printf("Printing queue: \n");
+	for (int i = 0; i < pq.currentPosition; i++) {
+		printStudent(pq.items[i]);
+	}
+}
 
 
 int main()
@@ -131,10 +136,12 @@ int main()
 			//printStudent(stud);
 			//deleteStudent(stud);
 			enqueue(&pq, stud);
-
+			
 
 		}
+		printQueue(pq);
 		Student* stud = dequeue(&pq);
+		printQueue(pq);
 	}
 }
 void deleteStudent(Student* pStud)
