@@ -1,0 +1,16 @@
+FIFO
+
+GET (OUT)
+PUT (IN)
+
+0 1 2 ______ N-2 N-1
+
+Pqueue - an array which has a size, and an index - current position = number of elements
+*in case you have an empty array but it has a size
+
+INSERT(PUT)
+O(1)
+best
+
+O(log(n))
+worst
