@@ -14,10 +14,10 @@ typedef struct Student {
 
 
 typedef struct BST {
-
 	struct BST* leftChild;
 	Student* data;
 	struct BST* rightChild;
+	int balanceFactor;
 }BinarySearchTree;
 
 BinarySearchTree* createNode(Student* stud) {
@@ -26,11 +26,10 @@ BinarySearchTree* createNode(Student* stud) {
 		node->data = stud;
 		node->leftChild = NULL;
 		node->rightChild = NULL;
+		node->balanceFactor = 0;
 	}
 	return node;
 }
-
-
 
 Student* createStudent(unsigned int, short int, const char*);
 void printStudent(Student*);
@@ -40,6 +39,11 @@ BinarySearchTree* insertRoot(BinarySearchTree*, Student*);
 void inOrder(BinarySearchTree*);
 void deleteKey(BinarySearchTree**, unsigned int);
 int getHeight(BinarySearchTree*);
+BinarySearchTree* rebalance(BinarySearchTree);
+BinarySearchTree* leftRotation(BinarySearchTree* );
+BinarySearchTree* rightRotation(BinarySearchTree* );
+void printTree(BinarySearchTree*, int);
+
 
 int main()
 {
@@ -70,13 +74,14 @@ int main()
 
 		}
 		inOrder(root);
-		deleteKey(&root, 13000);
-		printf("\n------------AFTER DELETION---------------\n");
-		inOrder(root);
+		//deleteKey(&root, 13000);
+		//printf("\n------------AFTER DELETION---------------\n");
+		//inOrder(root);
 
 		int height = getHeight(root);
 
-		printf("Height= %d", height);
+		//printf("Height= %d", height);
+		printTree(root, 0);
 	}
 }
 
@@ -129,6 +134,70 @@ int getHeight(BinarySearchTree* root) {
 	}
 }
 
+BinarySearchTree* leftRotation(BinarySearchTree* node) {
+	BinarySearchTree* desc = node->rightChild;
+	node->rightChild = desc->leftChild;
+	desc->leftChild = node;
+	return desc;
+}
+
+BinarySearchTree* rightRotation(BinarySearchTree* node) {
+	BinarySearchTree* desc = node->leftChild;
+	node->leftChild = desc->rightChild;
+	desc->rightChild = node;
+	return desc;
+}
+
+//preorder print function
+void printTree(BinarySearchTree* root, int level) {
+	if (root != NULL) {
+		for (int i = 0; i < level; i++) {
+			printf("	");
+		}
+		printf("-%d\n", root->data->regNo);
+		level += 1;
+		printTree(root->leftChild, level);
+		printTree(root->rightChild, level);
+	}
+}
+
+BinarySearchTree* rebalance(BinarySearchTree* pivot) {
+	if (pivot != NULL) {
+		pivot->balanceFactor = getHeight(pivot->rightChild) - getHeight(pivot->leftChild);
+		
+		if (pivot->balanceFactor == 2) {
+			BinarySearchTree* desc = pivot->rightChild;
+			if (desc->balanceFactor == 1) {
+				//left rotation in the pivot
+				pivot = leftRotation(pivot);
+
+			}
+			else {
+				//right rotation in the desc
+				pivot->rightChild = rightRotation(desc);
+				//left rotation in the pivot
+				pivot = leftRotation(pivot);
+			}
+		}
+		else if (pivot->balanceFactor == -2) {
+			BinarySearchTree* desc = pivot->rightChild;
+			if (desc->balanceFactor == 1) {
+				//1 right rotation in desc
+				pivot->leftChild = leftRotation(desc);
+				//1 left rotation in the pivot
+				pivot = rightRotation(pivot);
+			}
+			else if (desc->balanceFactor == -1) {
+				//right rotation in the pivot
+				pivot = rightRotation(pivot);
+			}
+		}
+		
+	}
+	return pivot;
+}
+
+
 BinarySearchTree* insertRoot(BinarySearchTree* root, Student* stud) {
 	if (root == NULL) {
 		return createNode(stud);
@@ -145,6 +214,12 @@ BinarySearchTree* insertRoot(BinarySearchTree* root, Student* stud) {
 		root->data = stud;
 		deleteStudent(tmp);
 	}
+	
+	//compute balanceFactor for current node
+	root = rebalance(root);
+	
+	
+
 	return root;
 }
 
